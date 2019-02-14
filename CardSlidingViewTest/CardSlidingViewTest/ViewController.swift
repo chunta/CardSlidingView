@@ -39,6 +39,11 @@ class ViewController: UIViewController {
         NSLayoutConstraint(item: self.slidingView.view, attribute: .height, relatedBy: .equal, toItem: self.view, attribute: .height, multiplier: 0.4, constant: 0.0).isActive = true
         
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print(#function, self.view.frame)
+    }
 
 
 }

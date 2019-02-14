@@ -83,7 +83,6 @@ public class RCardSlidingView: UIViewController {
             self.sclView = UIScrollView.init()
             self.view.addSubview(self.sclView)
             self.sclView.translatesAutoresizingMaskIntoConstraints = false
-            self.sclView.backgroundColor = UIColor.yellow
             
             NSLayoutConstraint(item: self.sclView, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
             NSLayoutConstraint(item: self.sclView, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
@@ -109,6 +108,7 @@ public class RCardSlidingView: UIViewController {
                 let url:URL = URL(string:self.src[i-1].url)!
                 let img:UIImageView = UIImageView.init(frame: rect)
                 img.sd_imageTransition = .fade
+                img.clipsToBounds = true
                 img.contentMode = .scaleAspectFill
                 img.sd_setImage(with: url, placeholderImage: nil, options: .forceTransition, progress: nil) { (image, error, type, url) in
                     if (error == nil && (image != nil)){
@@ -262,22 +262,24 @@ public class RCardSlidingView: UIViewController {
 
 }
 
-extension RCardSlidingView: UIScrollViewDelegate {
-    private func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+extension RCardSlidingView:UIScrollViewDelegate {
+    @objc(scrollViewWillBeginDragging:)
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         print("begin dragging")
         if (self.config.indicator_interruptable) {
             interrupted = true
         }
     }
     
-    private func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    @objc(scrollViewDidEndDecelerating:)
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         print("end decelerating...")
         snapInnerView()
     }
     
-    private func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    @objc(scrollViewDidEndDragging:scrollViewDidEndDragging:)
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         print("end dragging~~~")
         snapInnerView()
     }
 }
-
