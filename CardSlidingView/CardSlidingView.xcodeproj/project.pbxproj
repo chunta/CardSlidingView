@@ -10,6 +10,7 @@
 		27DBBD4A30B898D03B7E9729 /* Pods_CardSlidingView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FC83595DC252C5694DCE43 /* Pods_CardSlidingView.framework */; };
 		AC6CC18022153CC200E0865C /* CardSlidingView.h in Headers */ = {isa = PBXBuildFile; fileRef = AC6CC17E22153CC200E0865C /* CardSlidingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC6CC18722153CD600E0865C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6CC18622153CD600E0865C /* Service.swift */; };
+		ACE525382215743F000A65BB /* RCardSlidingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE525372215743F000A65BB /* RCardSlidingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		AC6CC17E22153CC200E0865C /* CardSlidingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSlidingView.h; sourceTree = "<group>"; };
 		AC6CC17F22153CC200E0865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC6CC18622153CD600E0865C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		ACE525372215743F000A65BB /* RCardSlidingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCardSlidingView.swift; sourceTree = "<group>"; };
 		F614BD145FE189C074CFD1C9 /* Pods-CardSlidingView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSlidingView.release.xcconfig"; path = "Target Support Files/Pods-CardSlidingView/Pods-CardSlidingView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +57,7 @@
 		AC6CC17D22153CC200E0865C /* CardSlidingView */ = {
 			isa = PBXGroup;
 			children = (
+				ACE525372215743F000A65BB /* RCardSlidingView.swift */,
 				AC6CC17E22153CC200E0865C /* CardSlidingView.h */,
 				AC6CC17F22153CC200E0865C /* Info.plist */,
 				AC6CC18622153CD600E0865C /* Service.swift */,
@@ -68,7 +71,6 @@
 				5FCAEA7923063549C4A01605 /* Pods-CardSlidingView.debug.xcconfig */,
 				F614BD145FE189C074CFD1C9 /* Pods-CardSlidingView.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -185,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE525382215743F000A65BB /* RCardSlidingView.swift in Sources */,
 				AC6CC18722153CD600E0865C /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
