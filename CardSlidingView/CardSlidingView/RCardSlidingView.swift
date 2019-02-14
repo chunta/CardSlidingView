@@ -110,7 +110,7 @@ public class RCardSlidingView: UIViewController {
                 img.sd_imageTransition = .fade
                 img.clipsToBounds = true
                 img.contentMode = .scaleAspectFill
-                img.sd_setImage(with: url, placeholderImage: nil, options: .forceTransition, progress: nil) { (image, error, type, url) in
+                img.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder-300x200"), options: .forceTransition, progress: nil) { (image, error, type, url) in
                     if (error == nil && (image != nil)){
                         
                     }

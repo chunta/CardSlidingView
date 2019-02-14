@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "CardSlidingView"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "A similar sliding view like the one in Google News App."
 
   # This description is used to generate tags and improve search results.
