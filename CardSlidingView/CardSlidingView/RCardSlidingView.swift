@@ -8,14 +8,19 @@
 
 import UIKit
 import SDWebImage
-struct RCardSliderData
+public struct RCardSliderData
 {
     let title:String
     let des:String
     let url:String
+    public init(title:String, des:String, url:String){
+        self.title = title
+        self.des = des
+        self.url = url
+    }
 }
 
-struct RCardSliderConfig {
+public struct RCardSliderConfig {
     let indicator_gap:Int
     let indicator_botmargin:Int
     let indicator_rlmargin:Int
@@ -25,12 +30,23 @@ struct RCardSliderConfig {
     let indicator_slideduration:Double
     let indicator_resetdelay:Double
     let indicator_interruptable:Bool
+    public init(gap:Int, botmargin:Int, rlmargin:Int, color:UIColor, cornerradius:CGFloat, height:Int, slideduration:Double, resetdelay:Double, interruptable:Bool) {
+        self.indicator_gap = gap
+        self.indicator_botmargin = botmargin
+        self.indicator_rlmargin = rlmargin
+        self.indicator_color = color
+        self.indicator_cornerradius = cornerradius
+        self.indicator_height = height
+        self.indicator_slideduration = slideduration
+        self.indicator_resetdelay = resetdelay
+        self.indicator_interruptable = interruptable
+    }
 }
 
-class RCardSlidingView: UIViewController {
+public class RCardSlidingView: UIViewController {
 
-    private var src:[RCardSliderData]!
-    private var config:RCardSliderConfig!
+    private var src:[RCardSliderData] = []
+    private var config:RCardSliderConfig = RCardSliderConfig(gap: 4, botmargin: 0, rlmargin: 0, color: UIColor.white, cornerradius: 4, height: 8, slideduration: 1, resetdelay: 1, interruptable: true)
     private var layoutscl:Bool = false
     private var layoutbeingreset:Bool = false
     private var sclView:UIScrollView!
@@ -44,15 +60,19 @@ class RCardSlidingView: UIViewController {
     private var displayPreView:UIView?
     private var interrupted:Bool = false
     
-    convenience init() {
-        self.init(nibName:nil, bundle:nil)
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    public init(_ src: [RCardSliderData], _ config:RCardSliderConfig) {
+        super.init(nibName: nil, bundle: nil)
+        
+        // Do something here
+        self.src = src
+        self.config = config
     }
     
-    override func viewDidLayoutSubviews() {
+    override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         // ---- Start ----
@@ -243,19 +263,19 @@ class RCardSlidingView: UIViewController {
 }
 
 extension RCardSlidingView: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    private func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         print("begin dragging")
-        if (self.config.indicator_interruptable){
+        if (self.config.indicator_interruptable) {
             interrupted = true
         }
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    private func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         print("end decelerating...")
         snapInnerView()
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    private func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         print("end dragging~~~")
         snapInnerView()
     }

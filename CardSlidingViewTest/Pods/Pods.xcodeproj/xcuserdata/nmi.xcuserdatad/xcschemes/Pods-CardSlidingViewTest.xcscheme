@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB9BF8AF4FEC73CEE26D269D6F08B1BD"
+               BlueprintIdentifier = "61AF3A4C8C1AC13C0AA013F81BBBD3D3"
                BuildableName = "Pods_CardSlidingViewTest.framework"
                BlueprintName = "Pods-CardSlidingViewTest"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EB9BF8AF4FEC73CEE26D269D6F08B1BD"
+            BlueprintIdentifier = "61AF3A4C8C1AC13C0AA013F81BBBD3D3"
             BuildableName = "Pods_CardSlidingViewTest.framework"
             BlueprintName = "Pods-CardSlidingViewTest"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -85,7 +85,6 @@
 				C7121BB7CF20A92649E40E52 /* Pods-CardSlidingViewTest.debug.xcconfig */,
 				FB67C398463CB319006DC95D /* Pods-CardSlidingViewTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -168,12 +167,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CardSlidingViewTest/Pods-CardSlidingViewTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CardSlidingView/CardSlidingView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CardSlidingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -360,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NEEK5ZHF5F;
 				INFOPLIST_FILE = CardSlidingViewTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NEEK5ZHF5F;
 				INFOPLIST_FILE = CardSlidingViewTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

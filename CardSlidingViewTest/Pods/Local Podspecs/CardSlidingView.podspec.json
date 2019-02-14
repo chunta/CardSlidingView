@@ -19,5 +19,10 @@
   "source_files": [
     "CardSlidingView",
     "CardSlidingView/**/*.{h,m,swift}"
-  ]
+  ],
+  "dependencies": {
+    "SDWebImage": [
+
+    ]
+  }
 }

@@ -1,16 +1,25 @@
 PODS:
-  - CardSlidingView (0.0.1)
+  - CardSlidingView (0.0.1):
+    - SDWebImage
+  - SDWebImage (4.4.5):
+    - SDWebImage/Core (= 4.4.5)
+  - SDWebImage/Core (4.4.5)
 
 DEPENDENCIES:
   - CardSlidingView (from `../CardSlidingView/`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   CardSlidingView:
     :path: "../CardSlidingView/"
 
 SPEC CHECKSUMS:
-  CardSlidingView: 1084cf53dd88442e859b1b0eadf3f4025f59bbdb
+  CardSlidingView: 12d2dca3341c2606e357756a888d40820edc7b9e
+  SDWebImage: ecc03494e973b93b80213649d32175f8d2d17d4d
 
-PODFILE CHECKSUM: e014cdcc3795669af3c8a683687588782e094060
+PODFILE CHECKSUM: 14626c720b26af22fd48fc95cdb5f4f87c5e42a3
 
 COCOAPODS: 1.6.0
