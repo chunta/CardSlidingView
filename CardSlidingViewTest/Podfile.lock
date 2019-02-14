@@ -1,0 +1,16 @@
+PODS:
+  - CardSlidingView (0.0.1)
+
+DEPENDENCIES:
+  - CardSlidingView (from `../CardSlidingView/`)
+
+EXTERNAL SOURCES:
+  CardSlidingView:
+    :path: "../CardSlidingView/"
+
+SPEC CHECKSUMS:
+  CardSlidingView: 1084cf53dd88442e859b1b0eadf3f4025f59bbdb
+
+PODFILE CHECKSUM: e014cdcc3795669af3c8a683687588782e094060
+
+COCOAPODS: 1.6.0

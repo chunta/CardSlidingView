@@ -1,0 +1,6 @@
+framework module CardSlidingView {
+  umbrella header "CardSlidingView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -65,10 +65,10 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
   spec.platform     = :ios, "10.0"
-
+  spec.swift_version = '4.2'
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
-  # spec.osx.deployment_target = "10.7"
+  spec.ios.deployment_target = "10.0"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
 
@@ -89,8 +89,8 @@ Pod::Spec.new do |spec|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-
-  spec.source_files  = "CardSlidingView"
+  # "YLogging", "YLogging/**/*.{h,m,swift}"
+  spec.source_files  = "CardSlidingView", "CardSlidingView/**/*.{h,m,swift}"
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"

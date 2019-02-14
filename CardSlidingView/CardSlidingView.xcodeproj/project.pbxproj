@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27DBBD4A30B898D03B7E9729 /* Pods_CardSlidingView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FC83595DC252C5694DCE43 /* Pods_CardSlidingView.framework */; };
 		AC6CC18022153CC200E0865C /* CardSlidingView.h in Headers */ = {isa = PBXBuildFile; fileRef = AC6CC17E22153CC200E0865C /* CardSlidingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC6CC18722153CD600E0865C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6CC18622153CD600E0865C /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FCAEA7923063549C4A01605 /* Pods-CardSlidingView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSlidingView.debug.xcconfig"; path = "Target Support Files/Pods-CardSlidingView/Pods-CardSlidingView.debug.xcconfig"; sourceTree = "<group>"; };
+		63FC83595DC252C5694DCE43 /* Pods_CardSlidingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardSlidingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6CC17B22153CC200E0865C /* CardSlidingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardSlidingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6CC17E22153CC200E0865C /* CardSlidingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSlidingView.h; sourceTree = "<group>"; };
 		AC6CC17F22153CC200E0865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC6CC18622153CD600E0865C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F614BD145FE189C074CFD1C9 /* Pods-CardSlidingView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSlidingView.release.xcconfig"; path = "Target Support Files/Pods-CardSlidingView/Pods-CardSlidingView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DBBD4A30B898D03B7E9729 /* Pods_CardSlidingView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +39,8 @@
 			children = (
 				AC6CC17D22153CC200E0865C /* CardSlidingView */,
 				AC6CC17C22153CC200E0865C /* Products */,
+				C3B7257189F4D08AC890600F /* Pods */,
+				FD8D20D0D4BC17297A606276 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +62,24 @@
 			path = CardSlidingView;
 			sourceTree = "<group>";
 		};
+		C3B7257189F4D08AC890600F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FCAEA7923063549C4A01605 /* Pods-CardSlidingView.debug.xcconfig */,
+				F614BD145FE189C074CFD1C9 /* Pods-CardSlidingView.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FD8D20D0D4BC17297A606276 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63FC83595DC252C5694DCE43 /* Pods_CardSlidingView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -73,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC6CC18322153CC200E0865C /* Build configuration list for PBXNativeTarget "CardSlidingView" */;
 			buildPhases = (
+				D542F9FD6D6C57E38850B40E /* [CP] Check Pods Manifest.lock */,
 				AC6CC17622153CC200E0865C /* Headers */,
 				AC6CC17722153CC200E0865C /* Sources */,
 				AC6CC17822153CC200E0865C /* Frameworks */,
@@ -128,6 +154,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D542F9FD6D6C57E38850B40E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CardSlidingView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC6CC17722153CC200E0865C /* Sources */ = {
@@ -193,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -251,7 +302,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -265,6 +316,7 @@
 		};
 		AC6CC18422153CC200E0865C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FCAEA7923063549C4A01605 /* Pods-CardSlidingView.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -276,6 +328,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CardSlidingView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,6 +345,7 @@
 		};
 		AC6CC18522153CC200E0865C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F614BD145FE189C074CFD1C9 /* Pods-CardSlidingView.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -303,6 +357,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CardSlidingView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
