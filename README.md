@@ -8,7 +8,7 @@
 $ gem install cocoapods
 ```
 
-> CocoaPods 0.39.0+ is required to build CardSlidingView 0.0.1.
+> CocoaPods 1.6.0+is required to build CardSlidingView 0.0.1.
 
 #### Podfile
 
@@ -16,7 +16,7 @@ To integrate CardSlidingView into your Xcode project using CocoaPods, specify it
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
+platform :ios, '10.0'
 
 target 'TargetName' do
 pod 'CardSlidingView', '~> 0.0'
