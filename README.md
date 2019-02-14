@@ -20,7 +20,7 @@ platform :ios, '10.0'
 
 target 'TargetName' do
 use_frameworks!
-pod 'CardSlidingView', '~> 0.0'
+pod 'CardSlidingView'
 end
 ```
 
