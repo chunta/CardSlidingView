@@ -20,6 +20,11 @@ public struct RCardSliderData
     }
 }
 
+public enum CardSlidingTextAlignment {
+    case Top
+    case Bottom
+}
+
 public struct RCardSliderConfig {
     let indicator_gap:Int
     let indicator_botmargin:Int
@@ -33,8 +38,12 @@ public struct RCardSliderConfig {
     let indicator_resetdelay:Double
     let indicator_interruptable:Bool
     let indicator_placeholder:UIImage?
-    public init(gap:Int, botmargin:Int, rlmargin:Int, color:UIColor, titlecolor:UIColor, descolor:UIColor, cornerradius:CGFloat, height:Int, slideduration:Double,
-                resetdelay:Double, interruptable:Bool, placeholder:UIImage?) {
+    let indicator_txtalightment:CardSlidingTextAlignment
+    let indicator_titlehighlitcolor:UIColor
+    let indicator_deshighlitcolor:UIColor
+    public init(gap:Int, botmargin:Int, rlmargin:Int, color:UIColor, titlecolor:UIColor, descolor:UIColor,
+                cornerradius:CGFloat, height:Int, slideduration:Double, resetdelay:Double, interruptable:Bool,
+                placeholder:UIImage?, textalignment:CardSlidingTextAlignment, titlehighlitcolor:UIColor, deshighlitcolor:UIColor) {
         self.indicator_gap = gap
         self.indicator_botmargin = botmargin
         self.indicator_rlmargin = rlmargin
@@ -47,14 +56,20 @@ public struct RCardSliderConfig {
         self.indicator_resetdelay = resetdelay
         self.indicator_interruptable = interruptable
         self.indicator_placeholder = placeholder
+        self.indicator_txtalightment = textalignment
+        self.indicator_titlehighlitcolor = titlehighlitcolor
+        self.indicator_deshighlitcolor = deshighlitcolor
     }
 }
 
 public class RCardSlidingView: UIViewController {
-
-    private var src:[RCardSliderData] = []
-    private var config:RCardSliderConfig = RCardSliderConfig(gap: 4, botmargin: 0, rlmargin: 0, color: UIColor.white,
-                                                             titlecolor:UIColor.white, descolor:UIColor.white, cornerradius: 4, height: 8, slideduration: 1, resetdelay: 1, interruptable: true, placeholder:nil)
+    
+    public static let defaultConfig:RCardSliderConfig = RCardSliderConfig(gap: 6, botmargin: 20, rlmargin: 20, color: UIColor.white,
+                                                             titlecolor:UIColor.white, descolor:UIColor.white, cornerradius: 2,
+                                                             height: 4, slideduration: 4, resetdelay: 1, interruptable: true,
+                                                             placeholder:nil, textalignment: .Top, titlehighlitcolor: UIColor.clear, deshighlitcolor: UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5))
+    private var src:[RCardSliderData]!
+    private var config:RCardSliderConfig!
     private var layoutscl:Bool = false
     private var layoutbeingreset:Bool = false
     private var sclView:UIScrollView!
@@ -128,17 +143,68 @@ public class RCardSlidingView: UIViewController {
                 }
                 vv.addSubview(img)
                 
-                var txtrect:CGRect = CGRect(x: 0, y: 10, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height*0.14))
-                txtrect = txtrect.insetBy(dx: 10, dy: 0)
-                let txt:UILabel = UILabel.init(frame: txtrect)
+                //Title & Description
+                var txtrect:CGRect = CGRect(x: 0, y: 0, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height))
+                txtrect = txtrect.insetBy(dx: 17, dy: 0)
+                let txt:UILabel = UILabel.init(frame:txtrect)
+                txt.font = UIFont(name: txt.font.fontName, size: 14)
                 txt.text = self.src[i-1].title
                 txt.numberOfLines = 2
                 txt.layer.borderWidth = 0
                 txt.textAlignment = .left
                 txt.textColor = self.config.indicator_titlecolor
                 txt.sizeToFit()
+                
                 vv.addSubview(txt)
                 
+                // Description
+                var desrect:CGRect = CGRect(x: 0, y: 0, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height))
+                desrect = desrect.insetBy(dx: 17, dy: 0)
+                let des:UILabel = UILabel.init(frame:desrect)
+                des.text = self.src[i-1].des
+                des.numberOfLines = 2
+                des.layer.borderWidth = 0
+                des.textAlignment = .left
+                des.textColor = self.config.indicator_descolor
+                des.sizeToFit()
+                vv.addSubview(des)
+                
+                let txtgap:Int = 5
+                var txtrectafter:CGRect = CGRect.zero
+                var desrectafter:CGRect = CGRect.zero
+                
+                if (self.config.indicator_txtalightment == .Top) {
+                    txtrectafter = CGRect(x: Int(txtrect.origin.x), y: txtgap*2,
+                                                     width: Int(round(txt.frame.size.width)), height: Int(round(txt.frame.size.height)) )
+                    txt.frame = txtrectafter
+                    
+                    desrectafter = CGRect(x: Int(desrect.origin.x), y: Int(txtrectafter.origin.y + txtrectafter.size.height) + txtgap,
+                                              width: Int(round(des.frame.size.width)), height: Int(round(des.frame.size.height)))
+                    des.frame = desrectafter
+                }
+                else if (self.config.indicator_txtalightment == .Bottom){
+                    desrectafter = CGRect(x: Int(desrect.origin.x), y: Int(duview.frame.size.height-des.frame.size.height) - txtgap*6,
+                                                     width: Int(round(des.frame.size.width)), height: Int(round(des.frame.size.height)))
+                    des.frame = desrectafter
+                    
+                    txtrectafter = CGRect(x: Int(txtrect.origin.x), y: Int(desrectafter.origin.y-txt.frame.size.height) - txtgap,
+                                                     width: Int(round(txt.frame.size.width)), height: Int(round(txt.frame.size.height)))
+                    txt.frame = txtrectafter
+                }
+                
+                // Highlit
+                let txtbackhighlitrect:CGRect = CGRect(x:10, y:Int(txtrectafter.origin.y), width:Int(duview.frame.size.width-20), height:Int(txtrectafter.size.height))
+                let txtbackv:UIView = UIView.init(frame: txtbackhighlitrect)
+                txtbackv.backgroundColor = self.config.indicator_titlehighlitcolor
+                vv.addSubview(txtbackv)
+                vv.bringSubviewToFront(txt)
+                
+                let desbackhighlitrect:CGRect = CGRect(x:10, y:Int(desrectafter.origin.y), width:Int(duview.frame.size.width-20), height:Int(desrectafter.size.height))
+                let desbackv:UIView = UIView.init(frame: desbackhighlitrect)
+                desbackv.backgroundColor = self.config.indicator_deshighlitcolor
+                vv.addSubview(desbackv)
+                vv.bringSubviewToFront(des)
+
                 duview.addSubview(vv)
             }
             
