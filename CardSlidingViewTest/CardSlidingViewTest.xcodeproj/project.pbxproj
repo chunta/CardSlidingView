@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		609CB60D9650EB248D88DCF1 /* Pods_CardSlidingViewTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26BE01CCEF033E50C878A6E /* Pods_CardSlidingViewTest.framework */; };
+		AC0BFA7622166A2F00006209 /* myplaceholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AC0BFA7522166A2F00006209 /* myplaceholder.jpeg */; };
 		ACE5250222155AF2000A65BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5250122155AF2000A65BB /* AppDelegate.swift */; };
 		ACE5250422155AF2000A65BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE5250322155AF2000A65BB /* ViewController.swift */; };
 		ACE5250722155AF2000A65BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE5250522155AF2000A65BB /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		A26BE01CCEF033E50C878A6E /* Pods_CardSlidingViewTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardSlidingViewTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC0BFA7522166A2F00006209 /* myplaceholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = myplaceholder.jpeg; sourceTree = "<group>"; };
 		ACE524FE22155AF2000A65BB /* CardSlidingViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardSlidingViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE5250122155AF2000A65BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE5250322155AF2000A65BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		ACE5250022155AF2000A65BB /* CardSlidingViewTest */ = {
 			isa = PBXGroup;
 			children = (
+				AC0BFA7522166A2F00006209 /* myplaceholder.jpeg */,
 				ACE5250122155AF2000A65BB /* AppDelegate.swift */,
 				ACE5250322155AF2000A65BB /* ViewController.swift */,
 				ACE5250522155AF2000A65BB /* Main.storyboard */,
@@ -151,6 +154,7 @@
 				ACE5250C22155AF3000A65BB /* LaunchScreen.storyboard in Resources */,
 				ACE5250922155AF3000A65BB /* Assets.xcassets in Resources */,
 				ACE5250722155AF2000A65BB /* Main.storyboard in Resources */,
+				AC0BFA7622166A2F00006209 /* myplaceholder.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,28 +25,36 @@ public struct RCardSliderConfig {
     let indicator_botmargin:Int
     let indicator_rlmargin:Int
     let indicator_color:UIColor
+    let indicator_titlecolor:UIColor
+    let indicator_descolor:UIColor
     let indicator_cornerradius:CGFloat
     let indicator_height:Int
     let indicator_slideduration:Double
     let indicator_resetdelay:Double
     let indicator_interruptable:Bool
-    public init(gap:Int, botmargin:Int, rlmargin:Int, color:UIColor, cornerradius:CGFloat, height:Int, slideduration:Double, resetdelay:Double, interruptable:Bool) {
+    let indicator_placeholder:UIImage?
+    public init(gap:Int, botmargin:Int, rlmargin:Int, color:UIColor, titlecolor:UIColor, descolor:UIColor, cornerradius:CGFloat, height:Int, slideduration:Double,
+                resetdelay:Double, interruptable:Bool, placeholder:UIImage?) {
         self.indicator_gap = gap
         self.indicator_botmargin = botmargin
         self.indicator_rlmargin = rlmargin
         self.indicator_color = color
+        self.indicator_titlecolor = titlecolor
+        self.indicator_descolor = descolor
         self.indicator_cornerradius = cornerradius
         self.indicator_height = height
         self.indicator_slideduration = slideduration
         self.indicator_resetdelay = resetdelay
         self.indicator_interruptable = interruptable
+        self.indicator_placeholder = placeholder
     }
 }
 
 public class RCardSlidingView: UIViewController {
 
     private var src:[RCardSliderData] = []
-    private var config:RCardSliderConfig = RCardSliderConfig(gap: 4, botmargin: 0, rlmargin: 0, color: UIColor.white, cornerradius: 4, height: 8, slideduration: 1, resetdelay: 1, interruptable: true)
+    private var config:RCardSliderConfig = RCardSliderConfig(gap: 4, botmargin: 0, rlmargin: 0, color: UIColor.white,
+                                                             titlecolor:UIColor.white, descolor:UIColor.white, cornerradius: 4, height: 8, slideduration: 1, resetdelay: 1, interruptable: true, placeholder:nil)
     private var layoutscl:Bool = false
     private var layoutbeingreset:Bool = false
     private var sclView:UIScrollView!
@@ -110,7 +118,10 @@ public class RCardSlidingView: UIViewController {
                 img.sd_imageTransition = .fade
                 img.clipsToBounds = true
                 img.contentMode = .scaleAspectFill
-                img.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder-300x200"), options: .forceTransition, progress: nil) { (image, error, type, url) in
+
+                let bundle:Bundle = Bundle(for: RCardSlidingView.self)
+                let placeholder:UIImage? = self.config.indicator_placeholder ?? UIImage(named: "placeholder", in: bundle, compatibleWith: nil)
+                img.sd_setImage(with: url, placeholderImage:placeholder, options: .forceTransition, progress: nil) { (image, error, type, url) in
                     if (error == nil && (image != nil)){
                         
                     }
@@ -124,7 +135,7 @@ public class RCardSlidingView: UIViewController {
                 txt.numberOfLines = 2
                 txt.layer.borderWidth = 0
                 txt.textAlignment = .left
-                txt.textColor = UIColor.white
+                txt.textColor = self.config.indicator_titlecolor
                 txt.sizeToFit()
                 vv.addSubview(txt)
                 

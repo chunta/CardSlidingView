@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		27DBBD4A30B898D03B7E9729 /* Pods_CardSlidingView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63FC83595DC252C5694DCE43 /* Pods_CardSlidingView.framework */; };
-		AC3551282215C42F0062C3E0 /* placeholder-300x200.png in Resources */ = {isa = PBXBuildFile; fileRef = AC3551272215C42F0062C3E0 /* placeholder-300x200.png */; };
+		AC0BFA7822166AE200006209 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BFA7722166AE200006209 /* placeholder.png */; };
 		AC6CC18022153CC200E0865C /* CardSlidingView.h in Headers */ = {isa = PBXBuildFile; fileRef = AC6CC17E22153CC200E0865C /* CardSlidingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC6CC18722153CD600E0865C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6CC18622153CD600E0865C /* Service.swift */; };
 		ACE525382215743F000A65BB /* RCardSlidingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE525372215743F000A65BB /* RCardSlidingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5FCAEA7923063549C4A01605 /* Pods-CardSlidingView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSlidingView.debug.xcconfig"; path = "Target Support Files/Pods-CardSlidingView/Pods-CardSlidingView.debug.xcconfig"; sourceTree = "<group>"; };
 		63FC83595DC252C5694DCE43 /* Pods_CardSlidingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardSlidingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC3551272215C42F0062C3E0 /* placeholder-300x200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-300x200.png"; sourceTree = "<group>"; };
+		AC0BFA7722166AE200006209 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		AC6CC17B22153CC200E0865C /* CardSlidingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardSlidingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6CC17E22153CC200E0865C /* CardSlidingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSlidingView.h; sourceTree = "<group>"; };
 		AC6CC17F22153CC200E0865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC6CC18622153CD600E0865C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		ACE525372215743F000A65BB /* RCardSlidingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCardSlidingView.swift; sourceTree = "<group>"; };
 		F614BD145FE189C074CFD1C9 /* Pods-CardSlidingView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardSlidingView.release.xcconfig"; path = "Target Support Files/Pods-CardSlidingView/Pods-CardSlidingView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,11 +57,10 @@
 		AC6CC17D22153CC200E0865C /* CardSlidingView */ = {
 			isa = PBXGroup;
 			children = (
-				AC3551272215C42F0062C3E0 /* placeholder-300x200.png */,
+				AC0BFA7722166AE200006209 /* placeholder.png */,
 				ACE525372215743F000A65BB /* RCardSlidingView.swift */,
 				AC6CC17E22153CC200E0865C /* CardSlidingView.h */,
 				AC6CC17F22153CC200E0865C /* Info.plist */,
-				AC6CC18622153CD600E0865C /* Service.swift */,
 			);
 			path = CardSlidingView;
 			sourceTree = "<group>";
@@ -155,7 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC3551282215C42F0062C3E0 /* placeholder-300x200.png in Resources */,
+				AC0BFA7822166AE200006209 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +189,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE525382215743F000A65BB /* RCardSlidingView.swift in Sources */,
-				AC6CC18722153CD600E0865C /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

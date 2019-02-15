@@ -14,10 +14,10 @@ class ViewController: UIViewController {
     var slidingView:RCardSlidingView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Service.doSomething())
         
+        //https://dl.dropboxusercontent.com/s/pue5p4tkw0f3xq1/haifsa-rafique-110898-unsplash-small.jpg
         let src:[RCardSliderData] = [ RCardSliderData.init(title: "The Untold Secret To Mastering ALITA In Just 3 Days.3 Simple Tips For Using ALITA To Get Ahead Your Competition", des: "Hello World",
-                                                           url: "https://dl.dropboxusercontent.com/s/pue5p4tkw0f3xq1/haifsa-rafique-110898-unsplash-small.jpg"),
+                                                           url: "http://sss.ccc/ss.png"),
                                       
                                       RCardSliderData.init(title: "Why My ALITA Is Better Than Yours", des: "Hello Friend",
                                                            url: "https://dl.dropboxusercontent.com/s/r1blgs7eue99y5x/on-the-road-6-1384796.jpg"),
@@ -26,10 +26,10 @@ class ViewController: UIViewController {
                                                            url: "https://dl.dropboxusercontent.com/s/kalnied3mo0bu2k/pickupimage.jpg")]
         
         let conf:RCardSliderConfig = RCardSliderConfig.init(gap: 6, botmargin: 20,
-                                                            rlmargin: 20, color: UIColor.white,
+                                                            rlmargin: 20, color: UIColor.white, titlecolor: UIColor.yellow, descolor: UIColor.blue,
                                                             cornerradius: 3, height: 6,
                                                             slideduration: 4, resetdelay: 0.7,
-                                                            interruptable: true)
+                                                            interruptable: true, placeholder: nil)
         slidingView = RCardSlidingView.init(src, conf)
         slidingView.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(slidingView.view)

@@ -90,7 +90,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
   # "YLogging", "YLogging/**/*.{h,m,swift}"
-  spec.source_files  = "CardSlidingView", "CardSlidingView/**/*.{h,m,swift}"
+  spec.source_files  = "CardSlidingView", "CardSlidingView/**/*.{h,swift,png}"
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
