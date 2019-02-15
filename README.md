@@ -1,5 +1,5 @@
 # CardSlidingView
-
+![](ShotX.gif)
 ## Installation with CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like CardSlidingView in your projects. You can install it with the following command:
@@ -30,4 +30,4 @@ Then, run the following command:
 $ pod install
 ```
 
-![](ShotX.gif)
+
