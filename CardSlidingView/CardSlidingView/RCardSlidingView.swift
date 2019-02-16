@@ -285,7 +285,6 @@ final public class RCardSlidingView: UIViewController {
     }
     
     @objc func update(){
-        print("update...")
         if (interrupted) {
             return
         }
