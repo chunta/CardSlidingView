@@ -2,6 +2,6 @@ language:
   - swift
 osx_image: xcode10.1
 script:
-  - xcodebuild -scheme CardSlidingView -workspace "./CardSlidingView/CardSlidingView.xcworkspace"
+  - xcodebuild -scheme CardSlidingView -workspace './CardSlidingView/CardSlidingView.xcworkspace' clean build
 after_success:
   - bash <(curl -s https://codecov.io/bash)
