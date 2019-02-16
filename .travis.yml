@@ -2,13 +2,14 @@ language:
   - swift
 osx_image: xcode10.1
 
-before_script: cd CardSlidingView
+before_script:
+- cd CardSlidingView
 
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
-- pod install
 
 script:
+  - pod install
   - xcodebuild -scheme CardSlidingView -workspace CardSlidingView.xcworkspace clean build
 after_success:
   - bash <(curl -s https://codecov.io/bash)
