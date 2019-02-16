@@ -35,18 +35,31 @@ class ViewController: UIViewController {
         let conf01:RCardSliderConfig = RCardSliderConfig.init(gap: 6, botmargin: 20,
                                                             rlmargin: 20, color: UIColor.white, titlecolor: UIColor.white, descolor: UIColor.white,
                                                             cornerradius: 2, height: 4,
-                                                            slideduration: 4, resetdelay: 0.7,
+                                                            slideduration: 1, resetdelay: 0.7,
                                                             interruptable: true, placeholder: nil, textalignment: .Bottom,
                                                             titlehighlitcolor: UIColor.init(red: 1.0, green: 0, blue: 1.0, alpha: 0.2),
                                                             deshighlitcolor: UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.4))
         
         slidingView = RCardSlidingView.init(src, conf01/*RCardSlidingView.defaultConfig*/)
         slidingView.view.translatesAutoresizingMaskIntoConstraints = false
+
         self.view.addSubview(slidingView.view)
         NSLayoutConstraint(item: self.slidingView.view, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute:.leading, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: self.slidingView.view, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute:.trailing, multiplier: 1.0, constant: 0.0).isActive = true
         NSLayoutConstraint(item: self.slidingView.view, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1.0, constant: 90.0).isActive = true
         NSLayoutConstraint(item: self.slidingView.view, attribute: .height, relatedBy: .equal, toItem: self.view, attribute: .height, multiplier: 0.4, constant: 0.0).isActive = true
+        
+        let button:UIButton = UIButton.init(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
+        button.addTarget(self, action: #selector(Dismiss), for: .touchDown)
+        button.setTitle("Dismiss", for: .normal)
+        self.view.addSubview(button)
+        
+        self.view.backgroundColor = UIColor.yellow
+    }
+    
+    @objc
+    func Dismiss(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLayoutSubviews() {

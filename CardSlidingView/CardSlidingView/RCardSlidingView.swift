@@ -62,7 +62,7 @@ public struct RCardSliderConfig {
     }
 }
 
-public class RCardSlidingView: UIViewController {
+final public class RCardSlidingView: UIViewController {
     
     public static let defaultConfig:RCardSliderConfig = RCardSliderConfig(gap: 6, botmargin: 20, rlmargin: 20, color: UIColor.white,
                                                              titlecolor:UIColor.white, descolor:UIColor.white, cornerradius: 2,
@@ -95,11 +95,29 @@ public class RCardSlidingView: UIViewController {
         self.config = config
     }
     
+    deinit {
+        print("deinit")
+    }
+    
+    override public func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        displayLink?.invalidate()
+    }
+    
+    override public func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        displayLink?.invalidate()
+        displayDuration = self.config.indicator_slideduration
+        displayLink = CADisplayLink.init(target:self, selector:#selector(self.update))
+        displayLink!.preferredFramesPerSecond = 30
+        displayLink!.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
+        displayTime = CACurrentMediaTime()
+    }
+    
     override public func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         // ---- Start ----
-        print(#function, self.view.frame)
         if (layoutscl == false && self.src.count > 0) {
             
             layoutscl = true
@@ -120,6 +138,7 @@ public class RCardSlidingView: UIViewController {
             sclView.delegate = self
             sclView.showsHorizontalScrollIndicator = false
             sclView.decelerationRate = .fast
+            sclView.layer.borderWidth = 1
             
             // Inner view
             for i in 1...Int(self.src.count){
@@ -245,11 +264,8 @@ public class RCardSlidingView: UIViewController {
                 bar.layer.mask = maskLayer
                 tabIndicatorList.append(bar)
             }
-            displayDuration = self.config.indicator_slideduration
-            displayLink = CADisplayLink.init(target:self, selector:#selector(self.update))
-            displayLink!.preferredFramesPerSecond = 30
-            displayLink!.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
-            displayTime = CACurrentMediaTime()
+            
+
         }
         // ---- End ----
     }
@@ -269,11 +285,10 @@ public class RCardSlidingView: UIViewController {
     }
     
     @objc func update(){
-        
+        print("update...")
         if (interrupted) {
             return
         }
-        
         let def:Double = CACurrentMediaTime()-displayTime
         if (def <= self.displayDuration && layoutbeingreset==false){
             let ratio:CGFloat = CGFloat(def) / CGFloat(displayDuration)
