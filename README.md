@@ -30,5 +30,5 @@ Then, run the following command:
 $ pod install
 ```
 
-License
+## License
 CardSlidingView is released under the MIT license.
