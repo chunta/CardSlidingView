@@ -35,8 +35,6 @@
 		AC6CC17B22153CC200E0865C /* CardSlidingView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardSlidingView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6CC17E22153CC200E0865C /* CardSlidingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardSlidingView.h; sourceTree = "<group>"; };
 		AC6CC17F22153CC200E0865C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACD6F7492218FA1C00278C24 /* CardSlidingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSlidingViewTests.swift; sourceTree = "<group>"; };
-		ACD6F74B2218FA1C00278C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACD6F7562219017200278C24 /* CardSlidingViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardSlidingViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD6F7582219017200278C24 /* CardSlidingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSlidingViewTests.swift; sourceTree = "<group>"; };
 		ACD6F75A2219017200278C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				AC6CC17D22153CC200E0865C /* CardSlidingView */,
-				ACD6F7482218FA1C00278C24 /* CardSlidingViewTests */,
 				ACD6F7572219017200278C24 /* CardSlidingViewTests */,
 				AC6CC17C22153CC200E0865C /* Products */,
 				C3B7257189F4D08AC890600F /* Pods */,
@@ -96,15 +93,6 @@
 				AC6CC17F22153CC200E0865C /* Info.plist */,
 			);
 			path = CardSlidingView;
-			sourceTree = "<group>";
-		};
-		ACD6F7482218FA1C00278C24 /* CardSlidingViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				ACD6F7492218FA1C00278C24 /* CardSlidingViewTests.swift */,
-				ACD6F74B2218FA1C00278C24 /* Info.plist */,
-			);
-			path = CardSlidingViewTests;
 			sourceTree = "<group>";
 		};
 		ACD6F7572219017200278C24 /* CardSlidingViewTests */ = {
