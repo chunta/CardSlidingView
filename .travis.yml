@@ -13,5 +13,4 @@ script:
   - xcodebuild -scheme CardSlidingView -workspace CardSlidingView.xcworkspace -sdk iphonesimulator clean build -enableCodeCoverage YES test
 
 after_success:
-    - bash <(curl -s https://codecov.io/bash)
-    - codecov
+  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
