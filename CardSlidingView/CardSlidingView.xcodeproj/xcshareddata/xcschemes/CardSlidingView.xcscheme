@@ -29,7 +29,26 @@
       codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ACD6F7462218FA1C00278C24"
+               BuildableName = "CardSlidingViewTests.xctest"
+               BlueprintName = "CardSlidingViewTests"
+               ReferencedContainer = "container:CardSlidingView.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AC6CC17A22153CC200E0865C"
+            BuildableName = "CardSlidingView.framework"
+            BlueprintName = "CardSlidingView"
+            ReferencedContainer = "container:CardSlidingView.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
