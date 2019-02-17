@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACD6F7462218FA1C00278C24"
+               BlueprintIdentifier = "ACD6F7552219017200278C24"
                BuildableName = "CardSlidingViewTests.xctest"
                BlueprintName = "CardSlidingViewTests"
                ReferencedContainer = "container:CardSlidingView.xcodeproj">
