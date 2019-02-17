@@ -10,7 +10,7 @@ before_install:
 
 script:
   - pod install
-  - xcodebuild -scheme CardSlidingView -workspace CardSlidingView.xcworkspace clean build test
+  - xcodebuild -scheme CardSlidingView -workspace CardSlidingView.xcworkspace -sdk iphonesimulator clean build test
 after_success:
   - bash <(curl -s https://codecov.io/bash) -X xcodellvm
   - bash <(curl -s https://codecov.io/bash) -t 07e07e95-fa0e-46e8-bc64-69c58df279ea
