@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/chunta/CardSlidingView.svg?branch=master)](https://travis-ci.org/chunta/CardSlidingView)
 [![License: MIT](https://img.shields.io/github/license/chunta/CardSlidingView.svg)](https://opensource.org/licenses/MIT)
-
+[![codecov](https://codecov.io/gh/chunta/CardView/branch/master/graph/badge.svg)](https://codecov.io/gh/chunta/CardView)
 
 # CardSlidingView
 ![](ShotX.gif) ![](ShotX2.gif)
